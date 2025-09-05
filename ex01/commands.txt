@@ -1,0 +1,106 @@
+1. pwd [OPTION]...
+    - Description: Print name of current/working directory
+    - Example: pwd
+
+
+
+2. ln [OPTION]... [-T] TARGET LINK_NAME
+   ln [OPTION]... TARGET
+   ln [OPTION]... TARGET... DIRECTORY
+   ln [OPTION]... -t DIRECTORY TARGET...
+    - Description: Make links between files
+    - Example: ln -s New_File New_File_Link
+    - Note: The -s flag creates a symbolic link (also known as a symlink or soft link) to a file or directory. 
+    A symbolic link is a special type of file that acts as a shortcut or pointer to another file or directory.
+    By default, the ln command will make hard links instead of symbolic or soft links.
+
+    Say you have a text file. If you make a symbolic link to that file, the link is only a pointer to the original file.
+    If you delete the original file, the link will be broken, as it no longer has anything to point to.
+
+    A hard link is a mirror copy of an original file with the exact same contents.
+    Like symbolic links, if you edit the contents of the original file, those changes will be reflected in the hard link.
+    If you delete the original file, though, the hard link will still work, and you can view and edit it as you would a normal
+    copy of the original file.
+
+
+
+3. uname [OPTION]...
+    - Description: print system information
+    - Examples: 
+        Use uname -s to display the kernel name.
+        Use uname -n to display the hostname.
+        Use uname -r to display the kernel release.
+        Use uname -v to display the kernel version.
+        Use uname -m to display the machine hardware name.
+
+
+
+4. grep [OPTION...] PATTERNS [FILE...]
+   grep [OPTION...] -e PATTERNS ... [FILE...]
+   grep [OPTION...] -f PATTERN_FILE ... [FILE...]
+    - Description: print lines that match patterns
+    - Example: cat New_File ---output--> 
+    `
+    Hello, World!
+    Lets learn something new today!
+    Here is the ending line.
+    `
+
+    cat New_File | grep "learn" ---output--> Lets learn something new today!
+
+
+
+5. head [OPTION]... [FILE]...
+    - Description: Print the first 10 lines of each FILE to standard output. 
+    With more than one FILE, precede each with a header giving the file name.
+    - Example: head -c 6 commands.txt ---output--> 1. pwd
+    - Note:
+        -c, --bytes=[-]NUM
+        print the first NUM bytes of each file; with the leading '-', print all but the last NUM bytes of each file
+
+
+
+6. sort [OPTION]... [FILE]...
+   - Description: Write sorted concatenation of all FILE(s) to standard output.
+   - Example: sort -n file.txt
+   - Note: The above command will sort the lines in file.txt in numerical order (because of -n flag).
+   By default, the sort command sorts lines in ASCII collating sequence, which can lead to unexpected results 
+   when sorting numbers or special characters.
+
+
+
+7. df [OPTION]... [FILE]...
+    - Description: df displays the amount of space available on the file system containing each file name argument. 
+    If no file name is given, the space available on all currently mounted file systems is shown.
+    - Example: df -h
+    - Note: -h, --human-readable
+            print sizes in powers of 1024 (e.g., 1023M)
+
+
+
+8. dd [OPERAND]...
+   dd OPTION
+   - Description: Copy a file, converting and formatting according to the operands.
+   This command was created to convert and copy files from multiple file system formats.
+   In the current day, the command is simply used to create bootable USB for Linux.
+
+    The dd command in Linux is a versatile command used for low-level copying and conversion of data.
+    It stands for “data-description” or “data definition,” and it can be used to copy and convert data
+    between different file formats and storage devices.
+    - Example: dd if=/dev/sdb of=/dev/sda # if we wanted to back up the entire hard drive as is to another drive.
+    - Note: The if and of arguments stand for input file and output file.
+
+
+
+9. whereis [options] [-BMS directory... -f] name...
+    - Description: locates the binary, source and manual files for the specified command names
+    - Example: whereis sudo ---output--> sudo: /usr/bin/sudo /usr/libexec/sudo /usr/share/man/man8/sudo.8.gz
+
+
+
+10. top [options]
+    - Description: The  top  program  provides  a  dynamic real-time view of a running system.
+    It can display system summary information as well as a list of processes or threads currently
+    being managed by the Linux kernel.
+    - Example: top -o %MEM
+    - Note: Will sort the process list by memory usage, with the most memory-intensive processes at the top.
