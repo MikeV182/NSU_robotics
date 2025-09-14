@@ -1,0 +1,3 @@
+/opt/ros/jazzy/share/ros2topic
+
+# command: ros2 pkg prefix ros2topic
