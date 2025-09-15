@@ -1,0 +1,38 @@
+bugwriter@DESKTOP-6RGE64I:~/ros2_ws/src$ ros2 pkg create --build-type ament_python --license Apache-2.0 --node-name my_node mikev182
+going to create a new package
+package name: mikev182
+destination directory: /home/bugwriter/ros2_ws/src
+package format: 3
+version: 0.0.0
+description: TODO: Package description
+maintainer: ['bugwriter <michailvays@gmail.com>']
+licenses: ['Apache-2.0']
+build type: ament_python
+dependencies: []
+node_name: my_node
+creating folder ./mikev182
+creating ./mikev182/package.xml
+creating source folder
+creating folder ./mikev182/mikev182
+creating ./mikev182/setup.py
+creating ./mikev182/setup.cfg
+creating folder ./mikev182/resource
+creating ./mikev182/resource/mikev182
+creating ./mikev182/mikev182/__init__.py
+creating folder ./mikev182/test
+creating ./mikev182/test/test_copyright.py
+creating ./mikev182/test/test_flake8.py
+creating ./mikev182/test/test_pep257.py
+creating ./mikev182/mikev182/my_node.py
+bugwriter@DESKTOP-6RGE64I:~/ros2_ws/src$ cd ..
+bugwriter@DESKTOP-6RGE64I:~/ros2_ws$ ls
+build  install  log  src
+bugwriter@DESKTOP-6RGE64I:~/ros2_ws$ colcon build --packages-select mikev182
+Starting >>> mikev182
+Finished <<< mikev182 [1.11s]
+
+Summary: 1 package finished [1.23s]
+bugwriter@DESKTOP-6RGE64I:~/ros2_ws$ source ~/.bashrc
+
+bugwriter@DESKTOP-6RGE64I:~/ros2_ws$ ros2 run mikev182 my_node
+Hi from mikev182.
